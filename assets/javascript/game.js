@@ -5,14 +5,20 @@ $(document).ready(function() {
     var wins = 0;
     var loses = 0;
 
+    randomNumFunc();
+
     // $('img').on('click', function() {
 
     //     // make sure clicking an image works 
     //     console.log("You clicked me!");
     // });
 
+    function randomNumFunc() {
+        return $('h3#numToBeat').text(Math.floor(Math.random() * 5) + 1);
+    }
+
     // generate a random number between 1 and 5 (inclusive) and show on HTML
-    $('h3#numToBeat').text(Math.floor(Math.random() * 5) + 1);
+    // $('h3#numToBeat').text(Math.floor(Math.random() * 5) + 1);
 
     num_to_beat = $('h3#numToBeat').text();
     num_to_beat = parseInt(num_to_beat);
@@ -28,14 +34,18 @@ $(document).ready(function() {
 
         // keep track of wins and loses
         console.log("what is num to beat ---", num_to_beat);
-        console.log("what is total score ---", total_score);
+        console.log("what is my score ---", total_score);
 
         if (num_to_beat == total_score) {
             wins++;            
             $('#wins').text(wins);
+            randomNumFunc();
+
+            // $('h3#numToBeat').empty();
+
             // alert("you have" + wins + " wins");
         }
-        else if (total_score > num_to_beat) {
+        else {
             loses++;
             $('#loses').text(loses);
             // alert("you have" + loses + " loses");
