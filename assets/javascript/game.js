@@ -13,8 +13,9 @@ $(document).ready(function() {
     //     console.log("You clicked me!");
     // });
 
+    // generate a random number between 19 and 120 (inclusive) and show on HTML
     function randomNumFunc() {
-        return $('h3#numToBeat').text(Math.floor(Math.random() * 5) + 1);
+        return $('h3#numToBeat').text(Math.floor(Math.random() * 102) + 19);
     }
 
     // generate a random number between 1 and 5 (inclusive) and show on HTML
@@ -24,9 +25,9 @@ $(document).ready(function() {
     num_to_beat = parseInt(num_to_beat);
     // alert(num_to_beat);
 
-    // click on an image, generate a random number and show on HTML
+    // click on an image, generate a random number (1- 12)and show on HTML
     $('img.randnum').click(function() {
-        $('h3#total_score').text(Math.floor(Math.random() * 5) + 1);
+        $('h3#total_score').text(Math.floor(Math.random() * 12) + 1);
 
         total_score = $('h3#total_score').text();
         total_score = parseInt(total_score);
@@ -45,6 +46,7 @@ $(document).ready(function() {
 
             // alert("you have" + wins + " wins");
         }
+        // need to keep running total of total_score
         else {
             loses++;
             $('#loses').text(loses);
