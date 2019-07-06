@@ -4,6 +4,7 @@ $(document).ready(function() {
     var num_to_beat;
     var wins = 0;
     var loses = 0;
+    var running_total = 0;
 
     randomNumFunc();
 
@@ -32,10 +33,14 @@ $(document).ready(function() {
         total_score = $('h3#total_score').text();
         total_score = parseInt(total_score);
 
+        running_total += total_score;
+        
+
 
         // keep track of wins and loses
         console.log("what is num to beat ---", num_to_beat);
         console.log("what is my score ---", total_score);
+        console.log("Running total ----" + running_total);
 
         if (num_to_beat == total_score) {
             wins++;            
