@@ -37,12 +37,14 @@ $(document).ready(function() {
         
 
 
-        // keep track of wins and loses
+        // keep track of wins, loses and running total
         console.log("what is num to beat ---", num_to_beat);
         console.log("what is my score ---", total_score);
         console.log("Running total ----" + running_total);
 
-        if (num_to_beat == total_score) {
+        total_score = $('h3#total_score').text(running_total);
+
+        if (num_to_beat == running_total) {
             wins++;            
             $('#wins').text(wins);
             randomNumFunc();
@@ -52,9 +54,10 @@ $(document).ready(function() {
             // alert("you have" + wins + " wins");
         }
         // need to keep running total of total_score
-        else {
+        else if (running_total > num_to_beat) {
             loses++;
             $('#loses').text(loses);
+            console.log(loses);
             // alert("you have" + loses + " loses");
         }
         
