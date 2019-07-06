@@ -4,9 +4,15 @@ $(document).ready(function() {
 
         // make sure clicking an image works 
         console.log("You clicked me!");
-
-
     });
+
+    // generate a random number between 1 and 5 (inclusive) and show on HTML
+    $('h3#numToBeat').text(Math.floor(Math.random() * 5) + 1);
+
+
+    // var RandNum = $('<div>');
+    // RandNum.text(Math.floor(Math.random() * 5) + 1);
+    // $('h3#numToBeat').append(RandNum);
 
     // $('.num').on('click', function() {
     //     // console.log(event);
