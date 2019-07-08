@@ -7,14 +7,7 @@ $(document).ready(function() {
     var running_total = 0;
 
     randomNumFunc();
-    // $('h3#numToBeat').text(Math.floor(Math.random() * 102) + 19);
-
-    // $('img').on('click', function() {
-
-    //     // make sure clicking an image works 
-    //     console.log("You clicked me!");
-    // });
-
+    
     // generate a random number between 19 and 120 (inclusive) and show on HTML
     function randomNumFunc() {
         $('h3#numToBeat').text(Math.floor(Math.random() * 102) + 19);
@@ -24,18 +17,10 @@ $(document).ready(function() {
     }
 
     function resetGame() {
-
-        // $('h3#total_score').text(" ");
-        // // running_total = 0;
-        // return num_to_beat;        
+        
+        return running_total = 0;
+               
     }
-
-    // generate a random number between 1 and 5 (inclusive) and show on HTML
-    // $('h3#numToBeat').text(Math.floor(Math.random() * 5) + 1);
-
-    // num_to_beat = $('h3#numToBeat').text();
-    // num_to_beat = parseInt(num_to_beat);
-    // alert(num_to_beat);
 
     // click on an image, generate a random number (1- 12)and show on HTML
     $('img.randnum').click(function() {
@@ -48,88 +33,32 @@ $(document).ready(function() {
         
 
 
-        // keep track of wins, loses and running total
+        // Debugging here --
         console.log("what is num to beat ---", num_to_beat);
         console.log("what is my score ---", total_score);
         console.log("Running total ----" + running_total);
 
-        total_score = $('h3#total_score').text(running_total);
+        $('h3#total_score').text(running_total);
 
-        // 
+        
         if (num_to_beat === running_total) {
-            // console.log("num to beat is now: ", num_to_beat);
             wins++;            
             $('#wins').text(wins);
-            randomNumFunc();
-            // randomNumFunc();
-            // $('h3#numToBeat').text(Math.floor(Math.random() * 102) + 19);
+            randomNumFunc();            
             $('h3#total_score').text("Congrats, You win!");
-            // resetGame();
-            
-            // resetGame();
-            running_total = 0;
-
-            // $('h3#total_score').text("Total score shown here");
-            // running_total = 0;
-
-            
-
-            // $('h3#numToBeat').empty();
-
-            // alert("you have" + wins + " wins");
+            resetGame();                     
         }
-        // need to keep running total of total_score
-        else if (running_total > num_to_beat) {
-            // console.log("num to beat is now: ", num_to_beat);
+        
+        else if (running_total > num_to_beat) {            
             loses++;
             $('#loses').text(loses);
             randomNumFunc();
-            // $('h3#numToBeat').text(Math.floor(Math.random() * 102) + 19);
             $('h3#total_score').text("You lose! Try again!");
-            // resetGame();
-            
-            // resetGame();
-            running_total = 0;
-
-            // console.log(loses);
-            // alert("you have" + loses + " loses");
+            resetGame();             
         }
-        
-        // alert(total_score);
-
-        // var CrystalNum = $(this).text(Math.floor(Math.random() * 5) + 1);
-        // console.log(CrystalNum);
+               
     });
-
-
-
-
     
-
-    // keep track of image random score
-
-
-
-
-    // var RandNum = $('<div>');
-    // RandNum.text(Math.floor(Math.random() * 5) + 1);
-    // $('h3#numToBeat').append(RandNum);
-
-    // $('.num').on('click', function() {
-    //     // console.log(event);
-    //     // check if number is clicked
-    //     // console.log(this.innerHTML);
-    //     // append numers into an empty string
-    
-    //     if (selectSecondNums === true) {
-    //         second_numbers = second_numbers + $(this).attr('val');
-    //         console.log(second_numbers, typeof second_numbers );
-    //     }
-    //     else {
-    //         first_numbers = first_numbers + $(this).attr('val');
-    //         console.log(first_numbers, typeof first_numbers);
-    //     }
-    // });
 
 });
 
