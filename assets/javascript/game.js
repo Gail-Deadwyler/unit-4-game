@@ -45,7 +45,7 @@ $(document).ready(function() {
             wins++;            
             $('#wins').text(wins);
             randomNumFunc();            
-            $('h3#total_score').text("Congrats, You win!");
+            $('h3#total_score').text("You scored " + running_total.toString() + " pts. You win!");
             resetGame();                     
         }
         
@@ -53,7 +53,7 @@ $(document).ready(function() {
             loses++;
             $('#loses').text(loses);
             randomNumFunc();
-            $('h3#total_score').text("You lose! Try again!");
+            $('h3#total_score').text("You only scored " + running_total.toString() + " pts. Try again!");
             resetGame();             
         }
                

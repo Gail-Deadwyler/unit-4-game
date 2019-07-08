@@ -8,6 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="assets/javascript/game.js"></script>
     <link rel="stylesheet" href="assets/css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Sniglet&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     
     <title>My Crystals Collector Game</title>
@@ -31,39 +32,52 @@
                 game if your total score goes above the random number
             </p>
             <p>
-                The value of each crystal is hidden from you when you click on it.
-            </p>
-            <p>
-                Every new game will change the values of the crystal.
-            </p>
+                The value of each crystal is hidden from you when you click on it. Every new game will change the 
+                values of the crystal.
+            </p> 
         </div>
 
-        <div id="random_score">
-            <h3>Random Number</h3>
-            <h3 id="numToBeat">Random Score Here..</h3>
-        </div>
-        <div id="results">
-            <h3>Wins: <span id="wins">0</span></h3>
-            <h3>Loses: <span id="loses">0</span></h3>
+
+        <div id="scoreboard">
+            <div id="random_score">
+                <h3>Random Number</h3>
+                <h3 id="numToBeat">Random Score Here..</h3>
+            </div>
+            <div id="results">
+                <h3>Wins: <span id="wins">0</span></h3>
+                <h3>Loses: <span id="loses">0</span></h3>
+            </div>
+            <div id="your_score">
+                <h3>Your total score is: </h3>
+                <h3 id="total_score">Total score here..</h3>
+            </div>
         </div>
 
-        <div class="pix">
-            <img class="randnum" src="assets/images/quartz.jpg" alt="Quartz">
-        </div>
-        <div class="pix">
-            <img class="randnum" src="assets/images/watzl.jpg" alt="Watzl">
-        </div>
-        <div class="pix">
-            <img class="randnum" src="assets/images/mineral.jpg" alt="Mineral">
-        </div>
-        <div class="pix">
-            <img class="randnum" src="assets/images/agate.jpg" alt="Agate">
-        </div>
+        <!-- <div id="results">
+            <div id="your_score">
+                <h3>Your total score is: </h3>
+                <h3 id="total_score">Total score here..</h3>
+            </div>
+        </div> -->
 
-        <div id="your_score">
-            <h3>Your total score is: </h3>
-            <h3 id="total_score">Total score here..</h3>
+        <div id="crystals">
+            <div class="pix">
+                <img class="randnum" src="assets/images/quartz.jpg" alt="Quartz">
+            </div>
+            <div class="pix">
+                <img class="randnum" src="assets/images/watzl.jpg" alt="Watzl">
+            </div>
+            <div class="pix">
+                <img class="randnum" src="assets/images/mineral.jpg" alt="Mineral">
+            </div>
+            <div class="pix">
+                <img class="randnum" src="assets/images/diamond.jpg" alt="Diamond">
+            </div>
         </div>
+        
+
+
+        
 
     </div>    
 </body>
