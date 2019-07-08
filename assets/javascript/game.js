@@ -7,6 +7,7 @@ $(document).ready(function() {
     var running_total = 0;
 
     randomNumFunc();
+    // $('h3#numToBeat').text(Math.floor(Math.random() * 102) + 19);
 
     // $('img').on('click', function() {
 
@@ -16,14 +17,24 @@ $(document).ready(function() {
 
     // generate a random number between 19 and 120 (inclusive) and show on HTML
     function randomNumFunc() {
-        return $('h3#numToBeat').text(Math.floor(Math.random() * 102) + 19);
+        $('h3#numToBeat').text(Math.floor(Math.random() * 102) + 19);
+        num_to_beat = $('h3#numToBeat').text();
+        num_to_beat = parseInt(num_to_beat);
+        return num_to_beat;        
+    }
+
+    function resetGame() {
+
+        // $('h3#total_score').text(" ");
+        // // running_total = 0;
+        // return num_to_beat;        
     }
 
     // generate a random number between 1 and 5 (inclusive) and show on HTML
     // $('h3#numToBeat').text(Math.floor(Math.random() * 5) + 1);
 
-    num_to_beat = $('h3#numToBeat').text();
-    num_to_beat = parseInt(num_to_beat);
+    // num_to_beat = $('h3#numToBeat').text();
+    // num_to_beat = parseInt(num_to_beat);
     // alert(num_to_beat);
 
     // click on an image, generate a random number (1- 12)and show on HTML
@@ -44,10 +55,24 @@ $(document).ready(function() {
 
         total_score = $('h3#total_score').text(running_total);
 
-        if (num_to_beat == running_total) {
+        // 
+        if (num_to_beat === running_total) {
+            // console.log("num to beat is now: ", num_to_beat);
             wins++;            
             $('#wins').text(wins);
             randomNumFunc();
+            // randomNumFunc();
+            // $('h3#numToBeat').text(Math.floor(Math.random() * 102) + 19);
+            $('h3#total_score').text("Congrats, You win!");
+            // resetGame();
+            
+            // resetGame();
+            running_total = 0;
+
+            // $('h3#total_score').text("Total score shown here");
+            // running_total = 0;
+
+            
 
             // $('h3#numToBeat').empty();
 
@@ -55,9 +80,18 @@ $(document).ready(function() {
         }
         // need to keep running total of total_score
         else if (running_total > num_to_beat) {
+            // console.log("num to beat is now: ", num_to_beat);
             loses++;
             $('#loses').text(loses);
-            console.log(loses);
+            randomNumFunc();
+            // $('h3#numToBeat').text(Math.floor(Math.random() * 102) + 19);
+            $('h3#total_score').text("You lose! Try again!");
+            // resetGame();
+            
+            // resetGame();
+            running_total = 0;
+
+            // console.log(loses);
             // alert("you have" + loses + " loses");
         }
         
