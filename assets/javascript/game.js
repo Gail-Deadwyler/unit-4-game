@@ -53,7 +53,7 @@ $(document).ready(function() {
             loses++;
             $('#loses').text(loses);
             randomNumFunc();
-            $('h3#total_score').text("You only scored " + running_total.toString() + " pts. Try again!");
+            $('h3#total_score').text("You scored " + running_total.toString() + " pts. You lose!");
             resetGame();             
         }
                
